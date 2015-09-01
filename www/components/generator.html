@@ -1,0 +1,6 @@
+<h3>{{vm.generator.resourceType}} ({{vm.generator.storage | number:1}})</h3>
+<div>
+    <div ng-repeat="cost in vm.generator.costs">
+        {{cost.resourceType}}: {{cost.amount | number:1}}
+    </div>
+</div>

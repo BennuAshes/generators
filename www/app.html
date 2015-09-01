@@ -1,0 +1,27 @@
+<div layout="column" layout-align="center">
+    <div>
+        <md-button ng-click="vm.increment(vm.selectedResourceType)" class="md-raised md-primary">jimmy rig?</md-button>
+        <md-button ng-click="vm.collect(vm.selectedResourceType)" class="md-raised md-primary"><md-tooltip>get resources from generators</md-tooltip>collect</md-button>
+    </div>    
+    <div>
+        
+        <select ng-options="resource.resourceType as resource.resourceType for resource in vm.resources" ng-model="vm.selectedResourceType">
+            
+        </select>
+        <md-button ng-click="vm.newGenerator(vm.selectedResourceType)" class="md-raised md-primary">
+            <md-tooltip>
+                cost multiplier: {{vm.baseGeneratorCost | number:1}}
+            </md-tooltip>
+            new generator            
+        </md-button>
+        <md-button ng-click="vm.newResource(vm.newResourceType)" class="md-raised md-primary">new resource</md-button>
+        <md-input-container>
+            <label>new resource type</label>
+            <input ng-model="vm.newResourceType" type="text" />
+        </md-input-container>
+    </div>
+    <div layout="row" layout-align="center">
+        <ba-resources resources="vm.resources"></ba-resources>
+        <ba-generators generators="vm.generators" /></ba-generators>
+    </div>
+</div>
